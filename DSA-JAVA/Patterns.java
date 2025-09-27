@@ -28,12 +28,23 @@ public class Patterns {
         }
     }
 
+    public static void pattern4(int n) {
+        int count = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(count + " ");
+            }
+            count++;
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt(); // take no. of test cases
         for (int i = 0; i < t; i++) {
             int n = scan.nextInt();
-            pattern3(n);
+            pattern4(n);
         }
         scan.close();
     }
