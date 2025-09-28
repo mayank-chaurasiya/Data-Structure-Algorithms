@@ -1,0 +1,40 @@
+Majority Elements : 
+
+Definition -> An element which appears more than n / 2 times in an array of size n.
+Uniqueness -> There can only be one such element because if two different elements appeared more than n / 2 times, their total count would exceed n, which is impossible
+
+>>> 1. Naive Approach -- using two Nested Loops - O(n^2) Time and O(1) space
+
+The idea is to count the frequency of each element using nested loops.
+-- The first loop iterates through each element of the array, treating it as the majority element.
+-- For each element, the second loop counts its occurences in the entire array.
+-- After the second loop, we check if this element appears more than n / 2 times, where n is the size of the array.
+-- if it does, it is the majority element in the array.
+
+>>> 2. Better Approach -- using Sorting - O(n log n) Time and O(1) space
+
+The idea is to sort the array so that similar elements are next to each other. Once sorted, go through the array and keep track of how many times each element appears.
+When you encounter a new element, check if the count of the previous element was more than half the total number of elements in the array. If it was, that element is
+the majority and should be returned. If no element meets this requirement, no majority element exists.
+
+>>> 3. Optimal Approach -- Using Hashing - O(n) Time and O(n) space
+
+The idea is to use a hash map to count the occurences of each element in the array.
+-- Traverse the array once, and for each element, update its count in the hash map.
+-- After updating the count, check if count exceeds n / 2.
+-- if such an element is found, return it immediately.
+-- if no element's count exceeds n / 2 return -1.
+
+>>> 4. Expected Approach -- Using Moore's Voting Algorithm - O(n) Time and O(1) space
+
+This is a two-step process:
+----> The first step gives the element that may be the majority element in the array. if there is a majority element in an array, then this step will definitely return majority element, otherwise, it will return candidate for majority element.
+----> Check if the element obtained from the above step is the majority element. This step is necessary as there might be no majority element.
+
+-- initialize a candidate variable and a count variable.
+-- Traverse the array once:
+        -> If count is zero, set the candidate to the current element and set count to one.
+        -> If the current element equals the candidate, increment count.
+        -> if the current element differs from the candidate decrement count.
+-- Traverse the array again to count the occurences of the candidate.
+-- If the candidate's count is greater than n / 2. return the candidate as the majority element.
