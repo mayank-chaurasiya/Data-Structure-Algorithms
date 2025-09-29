@@ -237,12 +237,91 @@ public class Patterns {
         }
     }
 
+    public static void pattern21(int n) {
+        int spaces = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("*");
+            }
+            spaces += 2;
+            System.out.println();
+        }
+        spaces = 2 * n - 2;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            spaces -= 2;
+            System.out.println();
+        }
+    }
+
+    public static void pattern22(int n) {
+        int spaces = 2 * n - 2;
+        for (int i = 1; i <= 2 * n - 1; i++) {
+            int stars = i;
+            if (i > n) {
+                stars = 2 * n - i;
+            }
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            if (i < n) {
+                spaces -= 2;
+            } else {
+                spaces += 2;
+            }
+        }
+    }
+
+    public static void pattern23(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0 || i == n - 1 || j == n - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern24(int n) {
+        for (int i = 0; i < 2 * n - 1; i++) {
+            for (int j = 0; j < 2 * n - 1; j++) {
+                int top = i, left = j, right = (2 * n - 2) - j, bottom = (2 * n - 2) - i;
+                System.out.print(n - Math.min(Math.min(top, bottom), Math.min(left, right)) + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt(); // take no. of test cases
         for (int i = 0; i < t; i++) {
             int n = scan.nextInt();
-            pattern20(n);
+            pattern24(n);
         }
         scan.close();
     }
