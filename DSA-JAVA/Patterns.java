@@ -321,7 +321,7 @@ public class Patterns {
         int t = scan.nextInt(); // take no. of test cases
         for (int i = 0; i < t; i++) {
             int n = scan.nextInt();
-            pattern24(n);
+            pattern3(n);
         }
         scan.close();
     }
