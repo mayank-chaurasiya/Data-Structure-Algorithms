@@ -39,6 +39,18 @@ public class Recursion {
         return n * factorial(n - 1);
     }
 
+    public static void fact(int n) {
+        int factorial = 1;
+        if (n == 0 || n == 1) {
+            System.out.print(factorial);
+            return;
+        }
+        for (int i = 1; i <= n; i++) {
+            factorial = factorial * i;
+        }
+        System.out.print(factorial);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -46,7 +58,8 @@ public class Recursion {
         // revNaturalNum(n, n);
         // sumNnumbers(n, 0);
         // System.out.print("sum = " + sum(n));
-        System.out.print("Factorial of " + n + " is : " + factorial(n));
+        // System.out.print("Factorial of " + n + " is : " + factorial(n));
+        // fact(n);
         sc.close();
     }
 }
