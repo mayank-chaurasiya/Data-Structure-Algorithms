@@ -51,15 +51,34 @@ public class Recursion {
         System.out.print(factorial);
     }
 
+    static void printArray(int ans[], int n) {
+        System.out.print("Reversed array is:- \n");
+        for (int i = 0; i < n; i++) {
+            System.out.print(ans[i] + " ");
+        }
+    }
+
+    // Function to reverse array using an auxiliary array
+    static void reverseArray(int arr[], int n) {
+        int[] ans = new int[n];
+        for (int i = n - 1; i >= 0; i--) {
+            ans[n - i - 1] = arr[i];
+        }
+        printArray(ans, n);
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
         // printNaturalNum(1, n);
         // revNaturalNum(n, n);
         // sumNnumbers(n, 0);
         // System.out.print("sum = " + sum(n));
         // System.out.print("Factorial of " + n + " is : " + factorial(n));
         // fact(n);
-        sc.close();
+        int n = 5;
+        int arr[] = { 8, 7, 5, 9, 10};
+        reverseArray(arr, n);
+        // sc.close();
     }
 }
