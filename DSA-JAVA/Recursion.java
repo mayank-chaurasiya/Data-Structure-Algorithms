@@ -67,8 +67,38 @@ public class Recursion {
         printArray(ans, n);
     }
 
+    // recursion
+    static boolean isPalidrome(int i, String s) {
+        if (i >= s.length() / 2) {
+            return true;
+        }
+        if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
+            return false;
+        }
+        return isPalidrome(i + 1, s);
+    }
+
+    // through loops and nested if else
+    static boolean isPalidrome(String s) {
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            char l = s.charAt(left), r = s.charAt(right);
+            if (!Character.isLetterOrDigit(l)) {
+                left++;
+            } else if (!Character.isLetterOrDigit(r)) {
+                right--;
+            } else if (Character.toLowerCase(l) != Character.toLowerCase(r)) {
+                return false;
+            } else {
+                left++;
+                right--;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
         // printNaturalNum(1, n);
         // revNaturalNum(n, n);
@@ -76,9 +106,23 @@ public class Recursion {
         // System.out.print("sum = " + sum(n));
         // System.out.print("Factorial of " + n + " is : " + factorial(n));
         // fact(n);
-        int n = 5;
-        int arr[] = { 8, 7, 5, 9, 10};
-        reverseArray(arr, n);
-        // sc.close();
+        // int n = 5;
+        // int arr[] = { 8, 7, 5, 9, 10};
+        // reverseArray(arr, n);
+
+        // String s = "madaam";
+        // System.out.print(isPalidrome(0, s));
+        // ----------------------------------------------------------------------
+        // String str = "ABCDECBA";
+        // boolean ans = isPalidrome(str);
+
+        // if (ans == true) {
+        // System.out.print("Pallindrome");
+        // } else {
+        // System.out.print("Not Pallindrome");
+        // }
+        // ----------------------------------------------------------------------
+
+        sc.close();
     }
 }
