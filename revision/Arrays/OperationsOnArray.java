@@ -184,6 +184,8 @@ public class OperationsOnArray {
         System.out.println("Max sum is : " + maxSum);
     }
 
+    // maxSumKadanes(arr);
+    
     // function to calculate max sum of the array with mixed elements -------------
     public static int maxSumMixedArr(int arr[]) {
         int overallMax = arr[0];
@@ -199,10 +201,11 @@ public class OperationsOnArray {
     }
 
     // System.out.println("Max sum of the given array is : " + maxSumMixedArr(arr));
-    
+
     public static void main(String[] args) {
         // create
         int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3 };
+        maxSubArrSum(arr);
         // Scanner sc = new Scanner(System.in);
 
         // sc.close();
