@@ -164,10 +164,45 @@ public class OperationsOnArray {
         System.out.println("Max sum is : " + maxSum);
     }
 
+    // maxSubArrSum(arr);
+
+    // kadane's Algorithm to find max sum in the subarray ----------
+    public static void maxSumKadanes(int arr[]) {
+        int maxSum = Integer.MIN_VALUE;
+        int currSum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            currSum += arr[i];
+
+            if (currSum < 0) {
+                currSum = 0;
+            }
+
+            maxSum = Math.max(maxSum, currSum);
+        }
+
+        System.out.println("Max sum is : " + maxSum);
+    }
+
+    // function to calculate max sum of the array with mixed elements -------------
+    public static int maxSumMixedArr(int arr[]) {
+        int overallMax = arr[0];
+        int currMax = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            int num = arr[i];
+
+            currMax = Math.max(num, currMax + num);
+            overallMax = Math.max(overallMax, currMax);
+        }
+        return overallMax;
+    }
+
+    // System.out.println("Max sum of the given array is : " + maxSumMixedArr(arr));
+    
     public static void main(String[] args) {
         // create
-        int arr[] = { 2, 5, 8, 10, 30 };
-        maxSubArrSum(arr);
+        int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3 };
         // Scanner sc = new Scanner(System.in);
 
         // sc.close();
