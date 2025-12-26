@@ -122,10 +122,52 @@ public class OperationsOnArray {
 
     // printSubarray(arr);
 
-    
+    public static void maxSubarraySum(int arr[]) {
+        int maxSum = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                int sum = 0;
+                for (int k = i; k <= j; k++) {
+                    sum += arr[k];
+                }
+                if (maxSum < sum) {
+                    maxSum = sum;
+                }
+            }
+        }
+        System.out.println("Maximum sum is : " + maxSum);
+    }
+
+    // maxSubarraySum(arr);
+
+    public static void maxSubArrSum(int arr[]) {
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int prefix[] = new int[arr.length];
+
+        // calculate prefix array
+        prefix[0] = arr[0];
+        for (int i = 1; i < prefix.length; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                currSum = i == 0 ? prefix[j] : prefix[j] - prefix[i - 1];
+
+                if (maxSum < currSum) {
+                    maxSum = currSum;
+                }
+            }
+        }
+        System.out.println("Max sum is : " + maxSum);
+    }
+
     public static void main(String[] args) {
         // create
         int arr[] = { 2, 5, 8, 10, 30 };
+        maxSubArrSum(arr);
         // Scanner sc = new Scanner(System.in);
 
         // sc.close();
