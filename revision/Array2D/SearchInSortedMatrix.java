@@ -6,6 +6,7 @@ public class SearchInSortedMatrix {
 
         while (row < matrix.length && col >= 0) {
             if (matrix[row][col] == key) {
+                System.out.println("Found key at (" + row + ", " + col + ")");
                 return true;
             } else if (key < matrix[row][col]) {
                 col--;
