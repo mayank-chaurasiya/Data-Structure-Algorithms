@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class SearchInSortedMatrix {
+    public static boolean searchElement(int matrix[][], int key) {
+        int row = 0, col = matrix[0].length - 1;
+
+        while (row < matrix.length && col >= 0) {
+            if (matrix[row][col] == key) {
+                return true;
+            } else if (key < matrix[row][col]) {
+                col--;
+            } else {
+                row++;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[][] matrix = { { 10, 20, 30, 40 },
+                { 15, 25, 35, 45 },
+                { 27, 29, 37, 48 },
+                { 32, 33, 39, 50 } };
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the key : ");
+        int key = sc.nextInt();
+
+        System.out.println(searchElement(matrix, key));
+
+        sc.close();
+    }
+}
