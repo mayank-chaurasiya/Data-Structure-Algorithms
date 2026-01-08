@@ -5,14 +5,12 @@ public class FibonacciNumber {
         if (n == 0) {
             return 0;
         }
-        
+
         if (n == 1) {
             return 1;
         }
 
-        int first = fibonacci(n - 1);
-        int second = fibonacci(n - 2);
-        return first + second;
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     public static void main(String[] args) {
