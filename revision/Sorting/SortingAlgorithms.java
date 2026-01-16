@@ -77,9 +77,37 @@ public class SortingAlgorithms {
         }
     }
 
+    public static void mergeSort(int arr[], int si, int ei) {
+        if (si >= ei) {
+            return;
+        }
+
+        int mid = si * (ei - si) / 2;
+
+        mergeSort(arr, si, mid);
+        mergeSort(arr, mid + 1, ei);
+
+        merge(arr, si, mid, ei);
+    }
+
+    public static void merge(int arr[], int si, int mid, int ei) {
+        int temp[] = new int[ei - si + 1]; // adding 1 to get the size of array;
+        int i = si, j = mid + 1, k = 0; // i for left, j for right, k for temp array;
+
+        while (i <= mid && j <= ei) {
+            if (arr[i] < arr[j]) {
+                temp[k] = arr[i];
+                i++;
+                k++;
+            } else {
+                
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int arr[] = { 5, 4, 3, 1, 2 };
-        countingSort(arr);
+        mergeSort(arr, 0, arr.length - 1);
         printArr(arr);
     }
 }
