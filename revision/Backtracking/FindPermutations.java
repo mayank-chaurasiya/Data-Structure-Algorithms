@@ -1,5 +1,3 @@
-package revision.Backtracking;
-
 public class FindPermutations {
     public static void getPermutations(String str, String ans) {
         if (str.length() == 0) {

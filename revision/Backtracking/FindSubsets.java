@@ -1,5 +1,3 @@
-package revision.Backtracking;
-
 public class FindSubsets {
     public static void getSubsets(String str, StringBuilder sb, int start) {
         if (start == str.length()) {
