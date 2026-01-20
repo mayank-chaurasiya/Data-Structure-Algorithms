@@ -36,6 +36,7 @@ public class NQueens {
     public static void nQueens(char board[][], int row) {
         if (row == board.length) {
             printBoard(board);
+            count++;
             return;
         }
         for (int j = 0; j < board.length; j++) {
@@ -46,6 +47,8 @@ public class NQueens {
             }
         }
     }
+
+    static int count = 0;
 
     public static void main(String[] args) {
         int n = 4;
@@ -60,5 +63,6 @@ public class NQueens {
         }
 
         nQueens(board, 0);
+        System.out.println("\nTotal ways to solve n-Queens : " + count + "\n");
     }
 }
