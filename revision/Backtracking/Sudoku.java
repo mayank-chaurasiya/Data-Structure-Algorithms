@@ -1,0 +1,91 @@
+public class Sudoku {
+    public static boolean isSafe(int sudoku[][], int row, int col, int digit) {
+        // row
+        for (int j = 0; j <= 8; j++) {
+            if (sudoku[row][j] == digit) {
+                return false;
+            }
+        }
+
+        // column
+        for (int i = 0; i <= 8; i++) {
+            if (sudoku[i][col] == digit) {
+                return false;
+            }
+        }
+
+        // grid
+        int sRow = (row / 3) * 3;
+        int sCol = (col / 3) * 3;
+        for (int i = sRow; i < sRow + 3; i++) {
+            for (int j = sCol; j < sCol + 3; j++) {
+                if (sudoku[i][j] == digit) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static boolean solution(int sudoku[][], int row, int col) {
+        if (row == 9 || col == 9) {
+            return true;
+        } else if (row == 9) {
+            return false;
+        }
+
+        // recursion
+        int nextRow = row, nextCol = col + 1;
+        // when col == sudoku[0].length then jump to the next row and set column = 0.
+        if (col + 1 == 9) {
+            nextRow = row + 1;
+            nextCol = 0;
+        }
+
+        // if the current index != zero(0) then proceed to the next index.
+        if (sudoku[row][col] != 0) {
+            return solution(sudoku, nextRow, nextCol);
+        }
+
+        // if the current index == zero(0) then proceed to the next index.
+        for (int digit = 1; digit <= 9; digit++) {
+            if (isSafe(sudoku, row, col, digit)) {
+                sudoku[row][col] = digit;
+                if (solution(sudoku, nextRow, nextCol)) {
+                    return true; // if solution exists return True.
+                }
+                sudoku[row][col] = 0;// if solution doesn't exist set the index back to 0.
+            }
+        }
+        return false;
+    }
+
+    public static void printSudoku(int sudoku[][]) {
+        System.out.println("------------- SOLVED SUDOKU -------------");
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                System.out.print(sudoku[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        int sudoku[][] = { { 0, 0, 8, 0, 0, 0, 0, 0, 0 },
+                { 4, 9, 0, 1, 5, 7, 0, 0, 2 },
+                { 0, 0, 3, 0, 0, 4, 1, 9, 0 },
+                { 1, 8, 5, 0, 6, 0, 0, 2, 0 },
+                { 0, 0, 0, 0, 2, 0, 0, 6, 0 },
+                { 9, 6, 0, 4, 0, 5, 3, 0, 0 },
+                { 0, 3, 0, 0, 7, 2, 0, 0, 4 },
+                { 0, 4, 9, 0, 3, 0, 0, 5, 7 },
+                { 8, 2, 7, 0, 0, 9, 0, 1, 3 } };
+
+        if (solution(sudoku, 0, 0)) {
+            System.out.println("Solution exits");
+            printSudoku(sudoku);
+        } else {
+            System.out.println("Solution does not exist");
+        }
+    }
+}
