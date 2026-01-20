@@ -28,10 +28,8 @@ public class Sudoku {
     }
 
     public static boolean solution(int sudoku[][], int row, int col) {
-        if (row == 9 || col == 9) {
+        if (row == 9) {
             return true;
-        } else if (row == 9) {
-            return false;
         }
 
         // recursion
