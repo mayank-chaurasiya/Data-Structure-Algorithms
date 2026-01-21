@@ -20,6 +20,7 @@ public class MaximumInArrList {
             if (list.get(i) > max) {
                 max = list.get(i);
             }
+            // max = Math.max(max, list.get(i));
         }
 
         System.out.println("Maximum is " + max);
