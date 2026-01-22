@@ -1,0 +1,48 @@
+// find if any pair in a sorted & rotated Arraylist has a targest sum
+package revision.ArrayList;
+
+import java.util.ArrayList;
+
+public class PairSum2 {
+    public static int[] getTargetSum(ArrayList<Integer> list, int target) {
+        int bp = -1, n = list.size(); // breaking point
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) > list.get(i + 1)) {
+                bp = i;
+                break;
+            }
+        }
+
+        int lp = bp + 1; // smallest
+        int rp = bp; // greatest
+
+        while (lp != rp) {
+            if (list.get(lp) + list.get(rp) == target) {
+                return new int[] { list.get(lp), list.get(rp) };
+            } else if (list.get(lp) + list.get(rp) < target) {
+                lp = (lp + 1) % n;
+            } else {
+                rp = (n + rp - 1) % n;
+            }
+        }
+        return new int[] {};
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        list.add(11);
+        list.add(15);
+        list.add(6);
+        list.add(8);
+        list.add(9);
+        list.add(10);
+
+        int[] result = getTargetSum(list, 16);
+
+        for(int i = 0; i < result.length; i++){
+            System.out.print(result[i] + " ");
+        }
+    }
+}
