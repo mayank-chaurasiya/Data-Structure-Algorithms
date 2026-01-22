@@ -1,6 +1,6 @@
 package LeetCode.Quest.Array;
 
-class ConcatenationOfArray {
+class Q1_ConcatenationOfArray {
     public static int[] getConcatenation(int[] nums) {
         int n = nums.length;
         int ans[] = new int[2 * n];
