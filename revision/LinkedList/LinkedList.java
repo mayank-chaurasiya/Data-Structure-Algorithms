@@ -149,6 +149,21 @@ public class LinkedList {
         return helper(head, key);
     }
 
+    // Reverse a Linked List
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -164,8 +179,12 @@ public class LinkedList {
         // ll.removeFirst();
         // ll.removeLast();
 
-        int key = 9;
+        // int key = 9;
         // System.out.println(key + " is at index : " + searchLL(key));
-        System.out.println(key + " is at index : " + recSearch(key));
+        // System.out.println(key + " is at index : " + recSearch(key));
+
+        ll.reverse();
+
+        ll.printLL();
     }
 }
