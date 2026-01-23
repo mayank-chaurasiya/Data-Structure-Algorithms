@@ -37,13 +37,21 @@ public class LinkedList {
 
     public void addInMiddle(int index, int data) {
         Node newNode = new Node(data);
-        if(head == null){
-            head = tail = newNode;
+        Node temp = head;
+
+        if (index == 0) {
+            addFirst(data);
             return;
         }
-        
-        newNode.next = head;
-        head = newNode;
+
+        int i = 0;
+        while (i < index - 1) {
+            temp = temp.next;
+            i++;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
     }
 
     // Methods to print()
@@ -73,6 +81,9 @@ public class LinkedList {
         ll.addLast(3);
         ll.printLL();
         ll.addLast(4);
+        ll.printLL();
+
+        ll.addInMiddle(2, 9);
         ll.printLL();
     }
 }
