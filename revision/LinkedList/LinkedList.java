@@ -237,15 +237,84 @@ public class LinkedList {
         return true;
     }
 
-    public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        ll.addFirst(1);
-        ll.addFirst(2);
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.printLL();
+    // Detect a LOOP/Cycle in a LL (Floyd's cycle finding algorithm)
+    public static boolean isCycle() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-        System.out.println(ll.isPalindrome());
+    // Remove cycle from a linked list
+    public static void removeCycle() {
+        Node slow = head;
+        Node fast = head;
+
+        // detect cycle
+        boolean cycle = false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                cycle = true;
+                break;
+            }
+        }
+        if (!cycle) {
+            System.out.println("No cycle found!!");
+            return;
+        }
+
+        // remove cycle
+        slow = head;
+
+        // case 1 : cycle starts at head
+        if (slow == fast) {
+            while (fast.next != slow) {
+                fast = fast.next;
+            }
+            fast.next = null;
+            System.out.println("cycle removed");
+            return;
+        }
+        
+        // case 2 : cycle starts at head
+        Node prev = null;
+
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // prev is last node in cycle
+        prev.next = null;
+        System.out.println("Cycle Removed!!");
+    }
+
+    public static void main(String[] args) {
+        // LinkedList ll = new LinkedList();
+        // ll.addFirst(1);
+        // ll.addFirst(2);
+        // ll.addFirst(2);
+        // ll.addFirst(1);
+        // ll.printLL();
+
+        head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = head;
+        System.out.println(isCycle());
+        removeCycle();
+        System.out.println(isCycle());
+
+        // System.out.println(ll.isPalindrome());
 
         // ll.addLast(4);
 
