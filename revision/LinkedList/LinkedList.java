@@ -190,17 +190,67 @@ public class LinkedList {
         head = prev;
     }
 
+    // Check for palindrome -----------------
+
+    // --------------- slow fast appraoch ---------------
+    public Node findMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public boolean isPalindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+
+        // find mid
+        Node midNode = findMid(head);
+
+        // reverse 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev;
+        Node left = head;
+
+        // check left half and right half
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
+        ll.addFirst(1);
+        ll.addFirst(2);
         ll.addFirst(2);
         ll.addFirst(1);
-        ll.addLast(3);
-        ll.addLast(4);
         ll.printLL();
 
-        ll.addInMiddle(2, 9);
-        ll.printLL();
+        System.out.println(ll.isPalindrome());
 
+        // ll.addLast(4);
+
+        // ll.addInMiddle(2, 9);
+        // ll.printLL();
         // System.out.println("Size of linked List : " + size);
         // ll.removeFirst();
         // ll.removeLast();
@@ -208,10 +258,8 @@ public class LinkedList {
         // int key = 9;
         // System.out.println(key + " is at index : " + searchLL(key));
         // System.out.println(key + " is at index : " + recSearch(key));
-
         // ll.reverse();
-
-        ll.removeNthNode(3);
-        ll.printLL();
+        // ll.removeNthNode(3);
+        // ll.printLL();
     }
 }
