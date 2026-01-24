@@ -284,13 +284,13 @@ public class LinkedList {
             return;
         }
         
-        // case 2 : cycle starts at head
+        // case 2 : cycle starts at elsewhere
         Node prev = null;
 
         while (slow != fast) {
             prev = fast;
             slow = slow.next;
-            fast = fast.next;
+            fast = fast.next;   
         }
 
         // prev is last node in cycle
