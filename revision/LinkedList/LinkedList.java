@@ -362,10 +362,8 @@ public class LinkedList {
         ll.addLast(8);
         ll.printLL();
 
-        ll.head = ll.mergeSort(ll.head);
-
-        ll.printLL();
-
+        // ll.head = ll.mergeSort(ll.head);
+        // ll.printLL();
         // head = new Node(1);
         // head.next = new Node(2);
         // head.next.next = new Node(3);
