@@ -353,6 +353,40 @@ public class LinkedList {
         return merge(newLeft, newRight);
     }
 
+    // Zig-Zag Linked List
+    public void zigZag() {
+        // find middle
+        Node mid = getMid(head);
+
+        // reverse 2nd half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node left = head;
+        Node right = prev;
+        Node nextLeft, nextRight;
+
+        // merge Zig Zag
+        while (left != null && right != null) {
+            nextLeft = left.next;
+            left.next = right;
+            nextRight = right.next;
+            right.next = nextLeft;
+
+            left = nextLeft;
+            right = nextRight;
+        }
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
@@ -360,6 +394,10 @@ public class LinkedList {
         ll.addFirst(9);
         ll.addFirst(5);
         ll.addLast(8);
+        ll.printLL();
+
+        ll.zigZag();
+
         ll.printLL();
 
         // ll.head = ll.mergeSort(ll.head);
