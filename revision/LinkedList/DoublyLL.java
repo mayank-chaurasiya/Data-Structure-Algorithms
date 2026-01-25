@@ -159,6 +159,22 @@ public class DoublyLL {
         }
     }
 
+    // reverse a doubly linked list
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public static void main(String[] args) {
         DoublyLL dll = new DoublyLL();
 
