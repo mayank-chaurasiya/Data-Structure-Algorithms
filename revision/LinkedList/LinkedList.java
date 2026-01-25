@@ -67,7 +67,7 @@ public class LinkedList {
 
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + "->");
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
         System.out.println("NULL");
@@ -283,14 +283,14 @@ public class LinkedList {
             System.out.println("cycle removed");
             return;
         }
-        
+
         // case 2 : cycle starts at elsewhere
         Node prev = null;
 
         while (slow != fast) {
             prev = fast;
             slow = slow.next;
-            fast = fast.next;   
+            fast = fast.next;
         }
 
         // prev is last node in cycle
@@ -298,26 +298,83 @@ public class LinkedList {
         System.out.println("Cycle Removed!!");
     }
 
+    // Merge sort on Linked List
+    private Node getMid(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    private Node merge(Node leftHead, Node rightHead) {
+        Node mergedLL = new Node(-1);
+        Node temp = mergedLL;
+
+        while (leftHead != null && rightHead != null) {
+            if (leftHead.data <= rightHead.data) {
+                temp.next = leftHead;
+                leftHead = leftHead.next;
+                temp = temp.next;
+            } else {
+                temp.next = rightHead;
+                rightHead = rightHead.next;
+                temp = temp.next;
+            }
+        }
+        while (leftHead != null) {
+            temp.next = leftHead;
+            leftHead = leftHead.next;
+            temp = temp.next;
+        }
+        while (rightHead != null) {
+            temp.next = rightHead;
+            rightHead = rightHead.next;
+            temp = temp.next;
+        }
+        return mergedLL.next;
+    }
+
+    public Node mergeSort(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        // find mid
+        Node mid = getMid(head);
+        // left and right merge sort
+        Node rightHead = mid.next;
+        mid.next = null;
+        Node newLeft = mergeSort(head);
+        Node newRight = mergeSort(rightHead);
+
+        return merge(newLeft, newRight);
+    }
+
     public static void main(String[] args) {
-        // LinkedList ll = new LinkedList();
-        // ll.addFirst(1);
-        // ll.addFirst(2);
-        // ll.addFirst(2);
-        // ll.addFirst(1);
-        // ll.printLL();
+        LinkedList ll = new LinkedList();
+        ll.addFirst(1);
+        ll.addFirst(4);
+        ll.addFirst(9);
+        ll.addFirst(5);
+        ll.addLast(8);
+        ll.printLL();
 
-        head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = head;
-        System.out.println(isCycle());
-        removeCycle();
-        System.out.println(isCycle());
+        ll.head = ll.mergeSort(ll.head);
 
+        ll.printLL();
+
+        // head = new Node(1);
+        // head.next = new Node(2);
+        // head.next.next = new Node(3);
+        // head.next.next.next = head;
+        // System.out.println(isCycle());
+        // removeCycle();
+        // System.out.println(isCycle());
         // System.out.println(ll.isPalindrome());
-
         // ll.addLast(4);
-
         // ll.addInMiddle(2, 9);
         // ll.printLL();
         // System.out.println("Size of linked List : " + size);
