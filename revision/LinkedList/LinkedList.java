@@ -445,6 +445,67 @@ public class LinkedList {
         return head;
     }
 
+    // Given a singly linked list and an integer k, swap the k-th node from the
+    // beginning with the k-th node from the end.
+
+    public static Node swapNodes(Node head, int k) {
+        if (head == null) {
+            return head;
+        }
+
+        // Step 1: Find length
+        int len = 0;
+        Node temp = head;
+        while (temp != null) {
+            len++;
+            temp = temp.next;
+        }
+
+        // if k is invalid
+        if (k > len) {
+            return head;
+        }
+
+        // if same Node (middle)
+        if (2 * k - 1 == len) {
+            return head;
+        }
+
+        // find kth node from start
+        Node prevX = null, currX = head;
+        for (int i = 1; i < k; i++) {
+            prevX = currX;
+            currX = currX.next;
+        }
+
+        // Find kth node from end
+        Node prevY = null, currY = head;
+        for (int i = 1; i < len - k + 1; i++) {
+            prevY = currY;
+            currY = currY.next;
+        }
+
+        // swap previous pointers
+        if (prevX != null) {
+            prevX.next = currY;
+        } else {
+            head = currY;
+        }
+
+        if (prevY != null) {
+            prevY.next = currX;
+        } else {
+            head = currX;
+        }
+
+        // swap next pointers
+        Node tempNext = currX.next;
+        currX.next = currY.next;
+        currY.next = tempNext;
+
+        return head;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
 
@@ -455,16 +516,23 @@ public class LinkedList {
             curr = curr.next;
         }
 
-        int M = 2;
-        int N = 2;
-
+        int k = 2;
         System.out.print("Original list : ");
         ll.printLL(head);
-        
-        head = deleteNafterM(head, M, N);
-        
-        System.out.print("Modified list : ");
+
+        head = swapNodes(head, k);
+        System.out.print("After swapping : ");
         ll.printLL(head);
+
+        // -------Delete N nodes after M nodes---------------
+        // int M = 2;
+        // int N = 2;
+        // System.out.print("Original list : ");
+        // ll.printLL(head);
+        // head = deleteNafterM(head, M, N);
+        // System.out.print("Modified list : ");
+        // ll.printLL(head);
+        // --------------------------------------
 
         // ------------ get intersection -------------------
         // Node headA, headB;
