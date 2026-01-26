@@ -411,38 +411,92 @@ public class LinkedList {
         return p1; // Intersection node or null
     }
 
+    // Delete N nodes after M Nodes of a linked list
+    public static Node deleteNafterM(Node head, int M, int N) {
+        if (head == null || M <= 0) {
+            return null;
+        }
+        if (N <= 0) {
+            return head;
+        }
+
+        Node curr = head;
+
+        while (curr != null) {
+            for (int i = 1; i < M && curr != null; i++) {
+                curr = curr.next;
+            }
+
+            if (curr == null) {
+                break;
+            }
+
+            // Delete next N Nodes
+            Node temp = curr.next;
+            for (int i = 0; i < N && temp != null; i++) {
+                temp = temp.next;
+            }
+
+            // Link remaining list
+            curr.next = temp;
+            // Move to next kept node
+            curr = temp;
+        }
+        return head;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
 
-        Node headA, headB;
-        headA = new Node(10);
-        headB = new Node(3);
-
-        Node newNode = new Node(6);
-        headB.next = newNode;
-
-        newNode = new Node(9);
-        headB.next.next = newNode;
-
-        newNode = new Node(15);
-        headA.next = newNode;
-        headB.next.next.next = newNode;
-
-        newNode = new Node(30);
-        headA.next.next = newNode;
-
-        headA.next.next.next = null;
-
-        ll.printLL(headA);
-        ll.printLL(headB);
-
-        Node getIntersection = ll.getIntersectionPoint(headA, headB);
-
-        if (getIntersection == null) {
-            System.out.println("No intersection point");
-        } else {
-            System.out.println("Intersection point " + getIntersection.data);
+        Node head = new Node(1);
+        Node curr = head;
+        for (int i = 2; i <= 9; i++) {
+            curr.next = new Node(i);
+            curr = curr.next;
         }
+
+        int M = 2;
+        int N = 2;
+
+        System.out.print("Original list : ");
+        ll.printLL(head);
+        
+        head = deleteNafterM(head, M, N);
+        
+        System.out.print("Modified list : ");
+        ll.printLL(head);
+
+        // ------------ get intersection -------------------
+        // Node headA, headB;
+        // headA = new Node(10);
+        // headB = new Node(3);
+
+        // Node newNode = new Node(6);
+        // headB.next = newNode;
+
+        // newNode = new Node(9);
+        // headB.next.next = newNode;
+
+        // newNode = new Node(15);
+        // headA.next = newNode;
+        // headB.next.next.next = newNode;
+
+        // newNode = new Node(30);
+        // headA.next.next = newNode;
+
+        // headA.next.next.next = null;
+
+        // ll.printLL(headA);
+        // ll.printLL(headB);
+
+        // Node getIntersection = ll.getIntersectionPoint(headA, headB);
+
+        // if (getIntersection == null) {
+        // System.out.println("No intersection point");
+        // } else {
+        // System.out.println("Intersection point " + getIntersection.data);
+        // }
+        // ---------------------------------------------------------------------------
         // ll.zigZag();
         // ll.head = ll.mergeSort(ll.head);
         // ll.printLL();
