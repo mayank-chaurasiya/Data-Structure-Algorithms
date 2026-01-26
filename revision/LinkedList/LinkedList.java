@@ -59,7 +59,7 @@ public class LinkedList {
     }
 
     // Methods to print()
-    public void printLL() {
+    public void printLL(Node head) {
         if (head == null) {
             System.out.println("NULL");
             return;
@@ -387,19 +387,63 @@ public class LinkedList {
         }
     }
 
+    // find the intersection point in the linked list
+    public Node getIntersectionPoint(Node headA, Node headB) {
+        if (headA == null || headB == null) {
+            return null;
+        }
+
+        Node p1 = headA;
+        Node p2 = headB;
+
+        while (p1 != p2) {
+            if (p1 == null) {
+                p1 = headB;
+            } else {
+                p1 = p1.next;
+            }
+            if (p2 == null) {
+                p2 = headA;
+            } else {
+                p2 = p2.next;
+            }
+        }
+        return p1; // Intersection node or null
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.addFirst(1);
-        ll.addFirst(4);
-        ll.addFirst(9);
-        ll.addFirst(5);
-        ll.addLast(8);
-        ll.printLL();
 
-        ll.zigZag();
+        Node headA, headB;
+        headA = new Node(10);
+        headB = new Node(3);
 
-        ll.printLL();
+        Node newNode = new Node(6);
+        headB.next = newNode;
 
+        newNode = new Node(9);
+        headB.next.next = newNode;
+
+        newNode = new Node(15);
+        headA.next = newNode;
+        headB.next.next.next = newNode;
+
+        newNode = new Node(30);
+        headA.next.next = newNode;
+
+        headA.next.next.next = null;
+
+        ll.printLL(headA);
+        ll.printLL(headB);
+
+        Node getIntersection = ll.getIntersectionPoint(headA, headB);
+
+        if (getIntersection == null) {
+            System.out.println("No intersection point");
+        } else {
+            System.out.println("Intersection point " + getIntersection.data);
+        }
+        // ll.zigZag();
         // ll.head = ll.mergeSort(ll.head);
         // ll.printLL();
         // head = new Node(1);
