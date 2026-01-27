@@ -1,5 +1,3 @@
-package revision.StackOperations;
-
 import java.util.*;
 
 public class StackUsingCF {

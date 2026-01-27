@@ -1,5 +1,3 @@
-package revision.StackOperations;
-
 public class StackUsingLL {
 
     static class Node {
