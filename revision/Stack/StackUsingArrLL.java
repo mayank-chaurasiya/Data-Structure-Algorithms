@@ -7,7 +7,7 @@ public class StackUsingArrLL {
         ArrayList<Integer> list = new ArrayList<>();
 
         public boolean isEmpty() {
-            return list.size() == 0;
+            return list.isEmpty();
         }
 
         // push
