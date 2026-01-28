@@ -1,5 +1,4 @@
-package LeetCode.Quest.Array;
-
+package leetCode.quest.Array;
 class Q1_ConcatenationOfArray {
     public static int[] getConcatenation(int[] nums) {
         int n = nums.length;

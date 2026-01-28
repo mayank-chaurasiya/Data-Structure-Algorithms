@@ -1,3 +1,4 @@
+package revision.backtracking;
 public class KnightsTour {
     static int N = 8;
 

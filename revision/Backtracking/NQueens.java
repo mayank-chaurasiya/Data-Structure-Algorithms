@@ -1,3 +1,4 @@
+package revision.backtracking;
 public class NQueens {
     public static void printBoard(char board[][]) {
         System.out.println("____________CHESS BOARD_______________");

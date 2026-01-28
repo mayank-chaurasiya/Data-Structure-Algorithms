@@ -1,3 +1,4 @@
+package revision.backtracking;
 public class RatInMaze {
     static int N = 4;
 
