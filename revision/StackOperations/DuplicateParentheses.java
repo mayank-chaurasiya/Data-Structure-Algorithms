@@ -1,3 +1,4 @@
+package revision.stackoperations;
 
 import java.util.Stack;
 
@@ -8,7 +9,7 @@ public class DuplicateParentheses {
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
-            //closing
+            // closing
             if (ch == ')') {
                 int count = 0;
                 while (s.peek() != '(') {
