@@ -1,6 +1,6 @@
 // LeetCode - 11 Container with most water
 
-package revision.ArrayList;
+package revision.arraylist;
 
 import java.util.ArrayList;
 

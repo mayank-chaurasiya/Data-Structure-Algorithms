@@ -1,4 +1,4 @@
-package revision.Sorting;
+package revision.sorting;
 
 public class SortingAlgorithms {
 

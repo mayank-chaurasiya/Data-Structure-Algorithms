@@ -1,5 +1,5 @@
 // find if any pair in a sorted & rotated Arraylist has a targest sum
-package revision.ArrayList;
+package revision.arraylist;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package leetCode.quest.Array;
+package leetcode.quest.array;
 public class Q2_ShuffleTheArray {
 
     public static int[] suffle(int[] arr, int n) {

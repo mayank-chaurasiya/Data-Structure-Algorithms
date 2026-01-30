@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class AllOccurrences {
     public static void printAllOccurrence(int arr[], int key, int i, String str) {

@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class RemoveDuplicatesInString {
     public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {

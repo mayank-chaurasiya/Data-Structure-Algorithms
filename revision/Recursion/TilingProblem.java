@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class TilingProblem {
     public static int waysToTile(int n) {

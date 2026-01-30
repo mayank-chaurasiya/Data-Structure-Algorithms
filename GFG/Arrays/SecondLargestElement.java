@@ -1,4 +1,4 @@
-package GFG.Arrays;
+package gfg.arrays;
 
 public class SecondLargestElement {
     public static int getScndLargest(int[] arr) {

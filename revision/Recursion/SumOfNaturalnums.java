@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class SumOfNaturalnums {
     public static int sum(int n) {

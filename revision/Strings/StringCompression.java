@@ -1,4 +1,4 @@
-package revision.Strings;
+package revision.strings;
 
 public class StringCompression {
     public static String compressString(String str) {

@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class ConvertIntoString {
 
@@ -12,7 +12,7 @@ public class ConvertIntoString {
 
         int i = str.charAt(idx) - '0';
 
-        convertNumToString(str, idx + 1, s.append(digits[i] + " "));
+        convertNumToString(str, idx + 1, s.append(digits[i]).append(' '));
     }
 
     public static void printDigits(int number) {

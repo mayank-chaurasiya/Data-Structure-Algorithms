@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class TowerOfHanoi {
     public static void towerOfHanoi(int n, String src, String helper, String dest) {

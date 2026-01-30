@@ -1,4 +1,4 @@
-package revision.Strings;
+package revision.strings;
 
 import java.util.Arrays;
 

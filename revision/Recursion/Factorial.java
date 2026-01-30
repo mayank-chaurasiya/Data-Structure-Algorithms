@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class Factorial {
     public static int fact(int n) {

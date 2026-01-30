@@ -1,4 +1,4 @@
-package revision.Strings;
+package revision.strings;
 
 public class LargestString {
     public static String largest(String str[]) {

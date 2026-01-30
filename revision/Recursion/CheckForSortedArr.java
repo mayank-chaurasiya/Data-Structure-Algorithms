@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class CheckForSortedArr {
     public static boolean sorted(int[] arr, int i) {

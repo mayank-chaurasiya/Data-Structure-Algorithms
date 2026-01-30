@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class FriendsPairingProblem {
     public static int countPairings(int n) {

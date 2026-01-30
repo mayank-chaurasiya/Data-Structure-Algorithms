@@ -1,4 +1,4 @@
-package leetCode.quest.Array;
+package leetcode.quest.array;
 public class Q3_MaxConsecutiveOnes {
 
     public static int consecutiveOnes(int arr[], int target) {

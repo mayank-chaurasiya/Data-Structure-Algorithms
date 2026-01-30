@@ -1,6 +1,8 @@
+
 import java.util.*;
 
 public class basicMaths {
+
     public static int reverse(int x) {
         int revNum = 0;
         while (x != 0) {
@@ -22,11 +24,7 @@ public class basicMaths {
             revNum = (revNum * 10) + lastDigit;
             x = x / 10;
         }
-        if (dup == revNum) {
-            return true;
-        } else {
-            return false;
-        }
+        return dup == revNum;
     }
 
     public static boolean isArmstrong(int num) {
@@ -36,11 +34,7 @@ public class basicMaths {
             sum = sum + (int) (Math.pow(lastDigit, k));
             num = num / 10;
         }
-        if (dup == sum) {
-            return true;
-        } else {
-            return false;
-        }
+        return dup == sum;
     }
 
     public static List<Integer> printDivisors(int n) {
@@ -67,11 +61,7 @@ public class basicMaths {
                 }
             }
         }
-        if (count == 2) {
-            return true;
-        } else {
-            return false;
-        }
+        return count == 2;
     }
 
     public static List<Integer> primes(int n) {
@@ -110,6 +100,5 @@ public class basicMaths {
         // int N = 30;
         // List<Integer> primeNumbers = primes(N);
         // System.out.println(primeNumbers);
-
     }
 }

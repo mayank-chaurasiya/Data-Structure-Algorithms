@@ -1,4 +1,4 @@
-package revision.DivideAndConquer;
+package revision.divide_and_conquer;
 
 public class InversionCount {
     public static int countInversions(int arr[]) {

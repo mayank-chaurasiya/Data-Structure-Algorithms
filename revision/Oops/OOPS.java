@@ -1,4 +1,4 @@
-package revision.Oops;
+package revision.oops;
 
 public class OOPS {
     public static void main(String[] args) {

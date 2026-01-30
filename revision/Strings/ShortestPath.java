@@ -1,4 +1,4 @@
-package revision.Strings;
+package revision.strings;
 
 public class ShortestPath {
     public static double getShortestPath(String str) {

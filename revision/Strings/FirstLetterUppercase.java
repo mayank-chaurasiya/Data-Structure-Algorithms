@@ -1,4 +1,4 @@
-package revision.Strings;
+package revision.strings;
 
 public class FirstLetterUppercase {
     public static String changeToUppercase(String str) {

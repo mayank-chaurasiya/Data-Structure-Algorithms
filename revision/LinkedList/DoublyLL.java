@@ -1,4 +1,4 @@
-package revision.LinkedList;
+package revision.linkedlist;
 
 public class DoublyLL {
     public class Node {

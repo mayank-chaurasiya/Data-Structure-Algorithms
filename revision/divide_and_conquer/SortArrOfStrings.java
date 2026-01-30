@@ -1,4 +1,4 @@
-package revision.DivideAndConquer;
+package revision.divide_and_conquer;
 
 public class SortArrOfStrings {
     public static void printArr(String arr[]) {

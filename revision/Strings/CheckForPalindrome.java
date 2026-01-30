@@ -1,4 +1,4 @@
-package revision.Strings;
+package revision.strings;
 
 public class CheckForPalindrome {
     public static boolean isPalindrome(String s) {

@@ -1,6 +1,6 @@
 //Leetcode - 11
 
-package LeetCode.Problems;
+package leetcode.problems;
 
 public class Q11_ContainerWithMostWater {
     public static int maxArea(int[] height) {

@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class PrintXpowerN {
     public static int pow(int x, int n) {

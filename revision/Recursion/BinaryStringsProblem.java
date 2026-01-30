@@ -1,4 +1,4 @@
-package revision.Recursion;
+package revision.recursion;
 
 public class BinaryStringsProblem {
     public static void printStr(int n, String newStr, int lastBit) {

@@ -1,4 +1,4 @@
-package revision.Strings;
+package revision.strings;
 
 public class LowercaseVowels {
     public static int countLowercaseVowels(String str) {
