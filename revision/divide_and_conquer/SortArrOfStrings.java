@@ -2,8 +2,8 @@ package revision.divide_and_conquer;
 
 public class SortArrOfStrings {
     public static void printArr(String arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for(String s : arr){
+            System.out.println(s + " ");
         }
     }
 

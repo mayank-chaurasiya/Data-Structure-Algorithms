@@ -17,15 +17,22 @@ public class DuplicateParentheses {
                 }
                 if (count < 1) {
                     return true;
+                } else {
+                    s.pop();
                 }
+            } else {
+                s.push(ch);
             }
 
         }
+        return false;
     }
 
     public static void main(String[] args) {
         String str = "((a+b))";
         String str2 = "(a-b)";
 
+        System.out.println(isDuplicate(str));
+        System.out.println(isDuplicate(str2));
     }
 }
