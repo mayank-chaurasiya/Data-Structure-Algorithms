@@ -1,5 +1,7 @@
 package revision.queue;
 
+// Leetcode - 232. Implement Queue using Stacks
+
 import java.util.Stack;
 
 public class TwoStackQueue {
