@@ -13,11 +13,20 @@ public class FirstUniqueChar {
             q.add(ch);
             freq[ch - 'a']++;
 
-            
+            while (!q.isEmpty() && freq[q.peek() - 'a'] > 1) {
+                q.remove();
+            }
         }
+        if (q.isEmpty()) {
+            System.out.println("No repeating characters!!");
+        } else {
+            System.out.println("First unique character is : " + q.peek());
+        }
+        // System.out.println();
     }
 
     public static void main(String[] args) {
         String str = "aabccxb";
+        printNonRepeating(str);
     }
 }
