@@ -6,5 +6,7 @@ package revision.greedyAlgorithm;
 // Find the maximum number of activities that can be performed without overlapping.
 
 public class ActivitySelection {
-
+    public static void main(String[] args) {
+        
+    }
 }
