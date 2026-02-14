@@ -1,4 +1,4 @@
-// 646 -- Leetcode
+// 646 -- Leetcode Max Length chain of pairs
 package revision.greedyAlgorithm;
 
 import java.util.Arrays;
