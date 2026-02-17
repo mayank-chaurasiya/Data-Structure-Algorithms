@@ -1,5 +1,8 @@
 package revision.binaryTrees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BuildTree {
     static class Node {
         int data;
@@ -55,6 +58,37 @@ public class BuildTree {
             postorder(root.right);
             System.out.print(root.data + " ");
         }
+
+        // Level Order Traversal
+        public void levelOrder(Node root) {
+            if (root == null) {
+                return;
+            }
+
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            while (!q.isEmpty()) {
+                Node currNode = q.remove();
+                if (currNode == null) {
+                    System.out.println();
+                    if (q.isEmpty()) {
+                        break;
+                    } else {
+                        q.add(null);
+                    }
+                } else {
+                    System.out.print(currNode.data + " ");
+                    if (currNode.left != null) {
+                        q.add(currNode.left);
+                    }
+                    if (currNode.right != null) {
+                        q.add(currNode.right);
+                    }
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -62,6 +96,6 @@ public class BuildTree {
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
 
-        tree.postorder(root);
+        tree.levelOrder(root);
     }
 }
