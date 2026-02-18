@@ -1,6 +1,8 @@
 package revision.binaryTrees;
 
-public class HeightOfTree {
+import java.util.*;
+
+public class OperationsOnBinaryTree {
     static class Node {
         int data;
         Node left, right;
@@ -114,6 +116,58 @@ public class HeightOfTree {
         return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
+    static class Info2 {
+        Node node;
+        int hd;
+
+        public Info2(Node node, int hd) {
+            this.node = node;
+            this.hd = hd;
+        }
+    }
+
+    public static void topView(Node root) {
+        // level order
+        Queue<Info2> q = new LinkedList<>();
+        HashMap<Integer, Node> map = new HashMap<>();
+
+        int min = 0, max = 0;
+        q.add(new Info2(root, 0));
+        q.add(null);
+
+        while (!q.isEmpty()) {
+            Info2 curr = q.remove();
+            if (curr == null) {
+                if (q.isEmpty()) {
+                    break;
+                } else {
+                    q.add(null);
+                }
+            } else {
+
+                // first time horizontal distance occuring
+                if (!map.containsKey(curr.hd)) {
+                    map.put(curr.hd, curr.node);
+                }
+
+                if (curr.node.left != null) {
+                    q.add(new Info2(curr.node.left, curr.hd - 1));
+                    min = Math.min(min, curr.hd - 1);
+                }
+
+                if (curr.node.right != null) {
+                    q.add(new Info2(curr.node.right, curr.hd + 1));
+                    max = Math.max(max, curr.hd + 1);
+                }
+            }
+        }
+
+        for (int i = min; i <= max; i++) {
+            System.out.print(map.get(i).data + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -123,16 +177,19 @@ public class HeightOfTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        Node subRoot = new Node(2);
-        subRoot.left = new Node(4);
-        subRoot.right = new Node(5);
+        topView(root);
 
-        System.out.println("Max height is : " + height(root));
-        System.out.println("Diameter of tree is : " + diameter(root));
-        System.out.println("Diameter of tree is with approach 2 : " + diameter2(root).diam);
-        System.out.println("Total no. of nodes is : " + countNode(root));
-        System.out.println("Sum of all the Node is : " + nodeSum(root));
+        // Node subRoot = new Node(2);
+        // subRoot.left = new Node(4);
+        // subRoot.right = new Node(5);
 
-        System.out.println("is subtree ? : " + isSubtree(root, subRoot));
+        // System.out.println("Max height is : " + height(root));
+        // System.out.println("Diameter of tree is : " + diameter(root));
+        // System.out.println("Diameter of tree is with approach 2 : " +
+        // diameter2(root).diam);
+        // System.out.println("Total no. of nodes is : " + countNode(root));
+        // System.out.println("Sum of all the Node is : " + nodeSum(root));
+
+        // System.out.println("is subtree ? : " + isSubtree(root, subRoot));
     }
 }
