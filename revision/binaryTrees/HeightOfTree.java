@@ -22,6 +22,19 @@ public class HeightOfTree {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
+    public static int diameter(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftDiameter = diameter(root.left);
+        int leftHeight = height(root.left);
+        int rightDiameter = diameter(root.right);
+        int rightHeight = height(root.right);
+
+        int selfDiameter = leftHeight + rightHeight + 1;
+        return Math.max(selfDiameter, Math.max(rightDiameter, leftDiameter));
+    }
+
     public static int countNode(Node root) {
         if (root == null) {
             return 0;
@@ -54,6 +67,7 @@ public class HeightOfTree {
         root.right.right = new Node(7);
 
         System.out.println("Max height is : " + height(root));
+        System.out.println("Diameter of tree is : " + diameter(root));
         System.out.println("Total no. of nodes is : " + countNode(root));
         System.out.println("Sum of all the Node is : " + nodeSum(root));
     }
