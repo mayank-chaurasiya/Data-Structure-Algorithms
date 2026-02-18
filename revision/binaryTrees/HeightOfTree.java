@@ -84,6 +84,36 @@ public class HeightOfTree {
         return leftSum + rightSum + root.data;
     }
 
+    public static boolean isIdentical(Node node, Node subRoot) {
+        if (node == null && subRoot == null) {
+            return true;
+        } else if (node == null || subRoot == null || node.data != subRoot.data) {
+            return false;
+        }
+
+        if (!isIdentical(node.left, subRoot.left)) {
+            return false;
+        }
+        if (!isIdentical(node.right, subRoot.right)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static boolean isSubtree(Node root, Node subRoot) {
+        if (root == null)
+            return false;
+
+        if (root.data == subRoot.data) {
+            if (isIdentical(root, subRoot)) {
+                return true;
+            }
+        }
+
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -93,10 +123,16 @@ public class HeightOfTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
+        Node subRoot = new Node(2);
+        subRoot.left = new Node(4);
+        subRoot.right = new Node(5);
+
         System.out.println("Max height is : " + height(root));
         System.out.println("Diameter of tree is : " + diameter(root));
         System.out.println("Diameter of tree is with approach 2 : " + diameter2(root).diam);
         System.out.println("Total no. of nodes is : " + countNode(root));
         System.out.println("Sum of all the Node is : " + nodeSum(root));
+
+        System.out.println("is subtree ? : " + isSubtree(root, subRoot));
     }
 }
