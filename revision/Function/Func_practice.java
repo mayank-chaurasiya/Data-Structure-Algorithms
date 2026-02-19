@@ -15,10 +15,8 @@ public class Func_practice {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
 
-
-        //-------------------------------------------------------------------
+        // -------------------------------------------------------------------
         // factorial function
         // int n = sc.nextInt();
         // System.out.println("Factorial of " + n + " = " + factorial(n));
