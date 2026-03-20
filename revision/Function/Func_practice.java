@@ -1,3 +1,5 @@
+package revision.function;
+
 import java.util.*;
 
 public class Func_practice {

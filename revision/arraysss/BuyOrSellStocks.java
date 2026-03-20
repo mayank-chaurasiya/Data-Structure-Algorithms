@@ -1,3 +1,5 @@
+package revision.arraysss;
+
 public class BuyOrSellStocks {
 
     public static int buyAndSellStocks(int prices[]) {

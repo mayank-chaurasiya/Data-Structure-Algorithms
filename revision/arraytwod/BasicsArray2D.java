@@ -1,3 +1,5 @@
+package revision.arraytwod;
+
 import java.util.*;
 
 public class BasicsArray2D {
@@ -11,7 +13,6 @@ public class BasicsArray2D {
             }
         }
     }
-
 
     public static void main(String[] args) {
         int matrix[][] = new int[3][3];

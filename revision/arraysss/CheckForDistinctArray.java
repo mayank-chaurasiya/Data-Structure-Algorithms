@@ -1,3 +1,5 @@
+package revision.arraysss;
+
 import java.util.Arrays;
 
 public class CheckForDistinctArray {

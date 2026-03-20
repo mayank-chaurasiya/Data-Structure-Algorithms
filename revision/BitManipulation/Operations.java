@@ -1,3 +1,5 @@
+package revision.bitManipulation;
+
 public class Operations {
     public static int getIthBit(int n, int i) {
         int bitMask = 1 << i;

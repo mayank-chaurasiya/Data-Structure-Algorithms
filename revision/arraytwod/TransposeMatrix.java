@@ -1,3 +1,5 @@
+package revision.arraytwod;
+
 public class TransposeMatrix {
 
     public static void printMatrix(int[][] matrix) {

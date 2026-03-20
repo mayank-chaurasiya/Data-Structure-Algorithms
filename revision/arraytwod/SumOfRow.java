@@ -1,3 +1,5 @@
+package revision.arraytwod;
+
 public class SumOfRow {
     public static int sumOfRow(int[][] matrix) {
         int sum = 0, col = 0, row = 1;

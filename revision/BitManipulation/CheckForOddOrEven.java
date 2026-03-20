@@ -1,3 +1,5 @@
+package revision.bitManipulation;
+
 public class CheckForOddOrEven {
     public static void EvenOrOdd(int n) {
         int bitMask = 1;

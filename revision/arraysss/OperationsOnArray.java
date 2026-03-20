@@ -1,3 +1,5 @@
+package revision.arraysss;
+
 import java.util.*;
 
 public class OperationsOnArray {
@@ -185,7 +187,7 @@ public class OperationsOnArray {
     }
 
     // maxSumKadanes(arr);
-    
+
     // function to calculate max sum of the array with mixed elements -------------
     public static int maxSumMixedArr(int arr[]) {
         int overallMax = arr[0];

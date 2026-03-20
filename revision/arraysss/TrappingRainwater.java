@@ -1,3 +1,5 @@
+package revision.arraysss;
+
 public class TrappingRainwater {
 
     public static int trappedRainwater(int heights[]) {

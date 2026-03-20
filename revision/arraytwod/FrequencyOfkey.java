@@ -1,3 +1,5 @@
+package revision.arraytwod;
+
 public class FrequencyOfkey {
     public static int search(int[][] matrix, int key) {
         int count = 0;

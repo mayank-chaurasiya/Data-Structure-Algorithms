@@ -1,3 +1,5 @@
+package revision.arraytwod;
+
 public class SpiralMatrix {
 
     public static void spiralMatrix(int matrix[][]) {

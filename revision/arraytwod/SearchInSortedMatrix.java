@@ -1,3 +1,5 @@
+package revision.arraytwod;
+
 import java.util.Scanner;
 
 public class SearchInSortedMatrix {

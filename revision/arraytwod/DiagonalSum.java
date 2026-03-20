@@ -1,3 +1,5 @@
+package revision.arraytwod;
+
 public class DiagonalSum {
     public static int diagonalSum(int matrix[][]) {
         int sum = 0;
