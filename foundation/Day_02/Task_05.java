@@ -18,7 +18,7 @@ class Printer {
         System.out.println(num);
     }
 
-    public void print(String num) {
-        System.out.println(num);
+    public void print(String text) {
+        System.out.println(text);
     }
 }
