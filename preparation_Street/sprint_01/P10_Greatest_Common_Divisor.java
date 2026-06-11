@@ -8,10 +8,10 @@ public class P10_Greatest_Common_Divisor {
                 gcd = i;
             }
         }
-        
+
         // using while loop
-        while(n1 != n2) {
-            if(n1 > n2) {
+        while (n1 != n2) {
+            if (n1 > n2) {
                 n1 -= n2;
             } else {
                 n2 -= n1;
