@@ -22,7 +22,7 @@ public class P19_CheckPrimes_in_range {
         if (n < 2) {
             return false;
         } else {
-            for (int i = 2; i < Math.sqrt(n); i++) {
+            for (int i = 2; i <= Math.sqrt(n); i++) {
                 if (n % i == 0) {
                     return false;
                 }
