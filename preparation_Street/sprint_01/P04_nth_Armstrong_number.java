@@ -1,6 +1,6 @@
 import java.lang.Math;
 
-public class P4_nth_Armstrong_number {
+public class P04_nth_Armstrong_number {
     static int NthArmstrong(int n) {
         int count = 0;
 

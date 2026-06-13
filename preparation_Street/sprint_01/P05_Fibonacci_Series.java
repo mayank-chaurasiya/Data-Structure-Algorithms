@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class P5_Fibonacci_Series {
+public class P05_Fibonacci_Series {
 
     // print fibonacci series for the nth terms
     static int fibonacci(int n) {

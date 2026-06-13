@@ -1,4 +1,4 @@
-public class P4_Armstrong {
+public class P04_Armstrong {
 
     // function to calculate x raised to the power y
     int power(int x, long y) {
@@ -38,7 +38,7 @@ public class P4_Armstrong {
     }
 
     public static void main(String[] args) {
-        P4_Armstrong ob = new P4_Armstrong();
+        P04_Armstrong ob = new P04_Armstrong();
         int x = 153;
         System.out.println(ob.isArmstrong(x));
         x = 1253;

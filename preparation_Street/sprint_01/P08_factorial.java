@@ -1,4 +1,4 @@
-public class P8_factorial {
+public class P08_factorial {
     public static void main(String[] args) {
         int fact = 1;
         int n = 5;

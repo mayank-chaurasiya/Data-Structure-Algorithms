@@ -3,7 +3,7 @@
 import java.util.Scanner;
 import java.time.Year; // inbuilt function to check for the leap years. 
 
-public class P3_validating_leap_years {
+public class P03_validating_leap_years {
     public static int Leap_years(int years) {
         if (years % 4 == 0) {
             if (years % 100 == 0) {

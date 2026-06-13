@@ -1,5 +1,5 @@
 // write a program to check if a string or number is a palindrom ?
-public class P6_palindrome_string {
+public class P06_palindrome_string {
     public static boolean isPalindrome(String str) {
         String reverse = "";
 

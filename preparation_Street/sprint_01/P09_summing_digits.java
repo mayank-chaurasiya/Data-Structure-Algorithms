@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class P9_summing_digits {
+public class P09_summing_digits {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a number : ");

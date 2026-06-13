@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class P2_checkForPrime {
+public class P02_checkForPrime {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
