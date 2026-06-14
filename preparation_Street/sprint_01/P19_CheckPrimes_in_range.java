@@ -1,3 +1,5 @@
+package preparation_street.sprint_01;
+
 import java.util.Scanner;
 
 public class P19_CheckPrimes_in_range {

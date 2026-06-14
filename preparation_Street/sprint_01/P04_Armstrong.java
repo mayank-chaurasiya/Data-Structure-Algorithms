@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 public class P04_Armstrong {
 
     // function to calculate x raised to the power y

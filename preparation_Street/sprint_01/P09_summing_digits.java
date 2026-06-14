@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 // write a program to sum the digits of a number
 
 import java.util.Scanner;

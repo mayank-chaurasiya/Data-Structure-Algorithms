@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 public class P08_factorial {
     public static void main(String[] args) {
         int fact = 1;

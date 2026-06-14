@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 public class P07_pyramid_star_ptrn {
     public static void main(String[] args) {
         int n = 5;

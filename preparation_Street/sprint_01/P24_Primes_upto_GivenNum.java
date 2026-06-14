@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 
 // Write a program to print all prime numbers less than a given number.
 import java.util.*;

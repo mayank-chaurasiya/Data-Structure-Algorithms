@@ -1,5 +1,6 @@
-//Determine Even/Odd Numbers
+package preparation_street.sprint_01;
 
+//Determine Even/Odd Numbers
 import java.util.Scanner;
 
 public class P01_Even_Odd {

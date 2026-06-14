@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 // write a program to generate the fibonacci series up to a given number.
 
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class P05_Fibonacci_Series {
 
     static void fibonacciSeries(int n) {
         int currTerm = 0, secondTerm = 1;
-        while(currTerm <= n) {
+        while (currTerm <= n) {
             System.out.print(currTerm + " ");
             int nextTerm = currTerm + secondTerm;
             currTerm = secondTerm;
@@ -27,7 +28,7 @@ public class P05_Fibonacci_Series {
         int firstTerm = 0, secondTerm = 1;
         System.out.println("Fibonacci Series: " + firstTerm + " " + secondTerm);
 
-        for(int i = 2; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             int nextTerm = firstTerm + secondTerm;
             System.out.print(" " + nextTerm);
             firstTerm = secondTerm;
@@ -38,7 +39,7 @@ public class P05_Fibonacci_Series {
     public static void main(String[] args) {
         // int n = 10;
         // for (int i = 0; i < n; i++) {
-        //     System.out.print(fibonacci(i) + " ");
+        // System.out.print(fibonacci(i) + " ");
         // }
 
         Scanner scan = new Scanner(System.in);

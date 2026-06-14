@@ -1,3 +1,5 @@
+package preparation_street.sprint_01;
+
 import java.util.Scanner;
 
 public class P20_CheckForPerfectNumbers {
@@ -14,7 +16,7 @@ public class P20_CheckForPerfectNumbers {
             }
             i++;
         }
-        if(sum == n) {
+        if (sum == n) {
             System.out.println(n + " is a perfect square");
         } else {
             System.out.println(n + " is not a perfect square.");

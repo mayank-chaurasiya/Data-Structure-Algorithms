@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 public class P16_Sum_of_elements {
     public static void main(String[] args) {
         int arr[] = { 12, 90, 34, 2 };

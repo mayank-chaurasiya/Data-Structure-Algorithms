@@ -1,3 +1,5 @@
+package preparation_street.sprint_01;
+
 import java.util.Scanner;
 
 public class P18_Generating_multiplication_tables {
@@ -7,7 +9,7 @@ public class P18_Generating_multiplication_tables {
         int n = scan.nextInt();
         scan.close();
 
-        for(int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             System.out.println(n + " * " + i + " = " + n * i);
         }
     }

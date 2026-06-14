@@ -1,3 +1,5 @@
+package preparation_street.sprint_01;
+
 import java.lang.Math;
 
 public class P04_nth_Armstrong_number {

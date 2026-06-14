@@ -1,3 +1,5 @@
+package preparation_street.sprint_01;
+
 import java.util.Scanner;
 
 public class P23_FibonacciAtPosition {

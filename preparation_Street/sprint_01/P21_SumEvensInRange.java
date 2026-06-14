@@ -1,3 +1,5 @@
+package preparation_street.sprint_01;
+
 import java.util.Scanner;
 
 public class P21_SumEvensInRange {
@@ -15,14 +17,14 @@ public class P21_SumEvensInRange {
         System.out.println();
         System.out.println("Sum of all the even numbers starting from " + start + " to " + end + " is : " + sum);
     }
-    
+
     public static void sumOdds(int start, int end) {
         int sum = 0;
-        
+
         System.out.println("Odd numbers from " + start + " to " + end + " are : ");
-        
-        for(int i = start; i <= end; i++) {
-            if(i % 2 != 0) {
+
+        for (int i = start; i <= end; i++) {
+            if (i % 2 != 0) {
                 System.out.print(i + " ");
                 sum += i;
             }

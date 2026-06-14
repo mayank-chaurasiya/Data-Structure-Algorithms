@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 public class P12_Consonent_vowels {
     public static void main(String[] args) {
         int vCount = 0, cCount = 0, totalChars = 0;

@@ -1,3 +1,4 @@
+package preparation_street.sprint_01;
 public class P10_Greatest_Common_Divisor {
 
     public static void main(String[] args) {
