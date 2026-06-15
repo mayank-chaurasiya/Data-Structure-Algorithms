@@ -1,7 +1,6 @@
 package preparation_street.sprint_01;
 
 // Write a program to print all prime numbers less than a given number.
-import java.util.*;
 
 public class P24_Primes_upto_GivenNum {
     private static boolean isPrime(int n) {
